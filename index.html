@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Teste Interativo de Canvas HTML5</title>
+       <link rel="stylesheet" href="css/style.css">
+       <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                line-height: 1.6;
+            }
+            h1, h2 {
+                color: #333;
+            }
+            canvas {
+                border: 1px solid #ccc;
+                margin-top: 10px;
+                display: block;
+            }
+            .instructions {
+                margin-bottom: 20px;
+            }
+            .question {
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+    
+        <h1>Teste Interativo de Canvas HTML5</h1>
+        <p class="instructions">Use o canvas abaixo para responder às perguntas desenhando suas respostas. Siga as instruções de cada pergunta para completar o teste.</p>
+    
+        <h2>Pergunta 1: Desenhe um retângulo vermelho</h2>
+        <canvas id="canvas1" width="500" height="400">Seu navegador não suporta o elemento canvas.</canvas>
+        <button onclick="desenharRetangulo()">Verificar Resposta</button>
+        <h2>Código:</h2>
+                <img src="midia/retangulo.png"alt="" width="500" height="200">
+
+        <h2>Pergunta 2: Desenhe um círculo azul</h2>
+        <canvas id="canvas2" width="500" height="400">Seu navegador não suporta o elemento canvas.</canvas>
+        <button onclick="desenharCirculo()">Verificar Resposta</button>
+        <h2>Código:</h2>
+                <img src="midia/bola.png"alt="" width="500" height="200">
+
+        <h2>Pergunta 3: Desenhe uma linha diagonal</h2>
+        <canvas id="canvas3" width="500" height="400">Seu navegador não suporta o elemento canvas.</canvas>
+        <button onclick="desenharLinha()">Verificar Resposta</button>
+        <h2>Código:</h2>
+        <img src="midia/linha.png"alt="" width="500" height="200">
+
+        <script>
+            function desenharRetangulo() {
+                const canvas = document.getElementById('canvas1');
+                const contexto = canvas.getContext('2d');
+                contexto.clearRect(0, 0, canvas.width, canvas.height);
+                contexto.fillStyle = '#FF0000';
+                contexto.fillRect(100, 100, 200, 100);
+            }
+    
+            function desenharCirculo() {
+                const canvas = document.getElementById('canvas2');
+                const contexto = canvas.getContext('2d');
+                contexto.clearRect(0, 0, canvas.width, canvas.height);
+                contexto.beginPath();
+                contexto.arc(250, 200, 50, 0, 2 * Math.PI);
+                contexto.fillStyle = '#0000FF';
+                contexto.fill();
+            }
+    
+            function desenharLinha() {
+                const canvas = document.getElementById('canvas3');
+                const contexto = canvas.getContext('2d');
+                contexto.clearRect(0, 0, canvas.width, canvas.height);
+                contexto.beginPath();
+                contexto.moveTo(50, 50);
+                contexto.lineTo(450, 350);
+                contexto.strokeStyle = '#000000';
+                contexto.stroke();
+            }
+        </script>
+    
+    </body>
+    </html>
+    
+</body>
+</html>
